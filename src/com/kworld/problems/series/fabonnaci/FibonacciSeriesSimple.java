@@ -1,12 +1,13 @@
 package com.kworld.problems.series.fabonnaci;
 
+import static com.kworld.util.Util.logger;
 import static com.kworld.util.Util.scanner;
 /*
-Pring Febonnaci series upto a number
+Print fibonacci series upto a number
  */
 public class FibonacciSeriesSimple {
     public static void main(String[] args) {
-        System.out.print("Enter No upto which Fibbonacci Series to print : ");
+    	logger.info("Enter No upto which Fibbonacci Series to print : ");
         Integer maxNo = scanner.nextInt();
 
         new FibonacciSeriesSimple().printFibonacci(maxNo);
@@ -16,12 +17,12 @@ public class FibonacciSeriesSimple {
         Integer first = 1;
         Integer second = 1;
         if(first < maxNo)
-            System.out.println(first);
+        	logger.info(String.format("%s%n", first));
         if(second < maxNo)
-            System.out.println(second);
+        	logger.info(String.format("%s%n", second));
         second = first + second;
         while(first+second < maxNo){
-            System.out.println(second);
+        	logger.info(String.format("%s%n", second));
             first = second - first;
             second = first + second;
         }

@@ -1,13 +1,14 @@
 package com.kworld.problems.number;
 
+import static com.kworld.util.Util.logger;
 import static com.kworld.util.Util.scanner;
 public class Armstrong {
     public static void main(String[] args) {
-        System.out.print("Enter Number to check if Armstrong :");
+    	logger.info("Enter Number to check if Armstrong :");
         long n = scanner.nextLong();
-        System.out.printf(" %d is %s", n, new Armstrong().checkArmstrong(n) ? "Armstrong" : "Not Armstrong");
+        logger.info(String.format(" %d is %s", n, new Armstrong().checkArmstrong(n) ? "Armstrong" : "Not Armstrong"));
 
-        System.out.printf("\n %d is sum of digits of %d", new Armstrong().sumOfDigits(n), n);
+        logger.info(String.format("%n %d is sum of digits of %d", new Armstrong().sumOfDigits(n), n));
     }
 
     private long sumOfDigits(long n) {

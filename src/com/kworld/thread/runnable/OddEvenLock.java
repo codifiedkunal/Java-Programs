@@ -5,27 +5,21 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class OddEvenLock {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         OddEvenPrinter oddEvenPrinter = new OddEvenLock().new OddEvenPrinter(100);
-        Thread odd = new Thread(new Runnable() {
-            @Override
-            public void run() {
+        Thread odd = new Thread(()->{
                 try {
                     oddEvenPrinter.printOdd();
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                	Thread.currentThread().interrupt();
                 }
-            }
         });
 
-        Thread even = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    oddEvenPrinter.printEven();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        Thread even = new Thread(()->{
+            try {
+                oddEvenPrinter.printEven();
+            } catch (InterruptedException e) {
+            	Thread.currentThread().interrupt();
             }
         });
 

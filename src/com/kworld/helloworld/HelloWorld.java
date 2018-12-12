@@ -1,10 +1,10 @@
 package com.kworld.helloworld;
 
-import static com.kworld.util.Util.log;
+import static com.kworld.util.Util.logger;
 
 public class HelloWorld {
 	
     public static void main(String[] args) {
-        log.info("Hello World !!!");
+        logger.info("Hello World !!!");
     }
 }

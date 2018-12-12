@@ -1,19 +1,22 @@
 package com.kworld.problems.series.prime;
 
+import static com.kworld.util.Util.logger;
 import static com.kworld.util.Util.scanner;
 /*
  Given Number N Check if it is prime
  */
 public class CheckPrime {
-    public static void main(String[] args) {
-        System.out.print("Enter Number N to check if prime : ");
+    private static final String IS_NUMBER_D_PRIME_S_N = "Is Number [%d] prime %s %n";
+
+	public static void main(String[] args) {
+		logger.info("Enter Number N to check if prime : ");
         int n = scanner.nextInt();
 
-        System.out.printf("Is Number [%d] prime %s \n", n, (checkPrimeWay1(n) == true ? "YES" : "NO"));
+        logger.info(String.format(IS_NUMBER_D_PRIME_S_N, n, (checkPrimeWay1(n) ? "YES" : "NO")));
 
-        System.out.printf("Is Number [%d] prime %s \n", n, (checkPrimeWay2(n) == true ? "YES" : "NO"));
+        logger.info(String.format(IS_NUMBER_D_PRIME_S_N, n, (checkPrimeWay2(n) ? "YES" : "NO")));
 
-        System.out.printf("Is Number [%d] prime %s \n", n, (checkPrimeWay3(n) == true ? "YES" : "NO"));
+        logger.info(String.format(IS_NUMBER_D_PRIME_S_N, n, (checkPrimeWay3(n) ? "YES" : "NO")));
     }
 
     private static boolean checkPrimeWay3(int n) {

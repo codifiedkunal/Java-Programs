@@ -1,5 +1,6 @@
 package com.kworld.problems.series.fabonnaci;
 
+import static com.kworld.util.Util.logger;
 import static com.kworld.util.Util.scanner;
 
 /*
@@ -7,17 +8,17 @@ Print n Febonnaci nos in series
  */
 public class FibonaciSeriesRecursive {
     public static void main(String[] args) {
-        System.out.print("Enter number to items to print in Fibonacci Series : ");
+    	logger.info("Enter number to items to print in Fibonacci Series : ");
         Integer maxNo = scanner.nextInt();
 
-        System.out.println("\n\nFibonnaci Using Recursive ");
+        logger.info("\n\nFibonnaci Using Recursive ");
         for (int i = 1; i <= maxNo ; i++){
-            System.out.print(fibbonacciOf(i) + " ");
+        	logger.info(fibbonacciOf(i) + " ");
         }
 
-        System.out.println("\n\nFibonnaci Using Simple Function ");
+        logger.info("\n\nFibonnaci Using Simple Function ");
         for (int i = 1; i <= maxNo ; i++){
-            System.out.print(fibonacciSimple(i) + " ");
+        	logger.info(fibonacciSimple(i) + " ");
         }
     }
 

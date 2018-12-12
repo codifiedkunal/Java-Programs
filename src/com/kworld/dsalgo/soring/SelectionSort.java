@@ -1,16 +1,16 @@
 package com.kworld.dsalgo.soring;
 
 import static com.kworld.util.Util.swapValues;
+import static com.kworld.util.Util.logger;
 
 import java.util.Arrays;
 
-public class SelectionSort {
+public class SelectionSort { 
     public static void main(String[] args) {
         Integer[] arr = {6, 1, 8, 6, 0, 3, 2, 8, 6, 7, 66, 12, -1};
-
-        System.out.println("Array Before Soring : " + Arrays.toString(arr));
+        logger.info(String.format("Array Before Soring : %s %n", Arrays.toString(arr)));
         new SelectionSort().sortArray(arr);
-        System.out.println("Array After Soring : " + Arrays.toString(arr));
+        logger.info(String.format("Array After Soring : %s %n", Arrays.toString(arr)));
     }
 
     private void sortArray(Integer[] arr) {
@@ -21,7 +21,7 @@ public class SelectionSort {
                     min = j;
             }
             swapValues(arr, i, min);
-            System.out.printf("After Loop %2d %s \n", i, Arrays.toString(arr));
+            logger.info(String.format("After Loop %2d %s %n", i, Arrays.toString(arr)));
         }
     }
 }

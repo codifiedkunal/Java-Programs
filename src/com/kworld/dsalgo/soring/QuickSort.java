@@ -3,17 +3,17 @@ package com.kworld.dsalgo.soring;
 import com.kworld.util.Util;
 
 import java.util.Arrays;
-
+import static com.kworld.util.Util.logger;
 public class QuickSort {
     public static void main(String[] args) {
         Integer[] arr = {6, 1, 8, 6, 0, 3, 2, 8, 6, 7, 66, 12, 5};
 
-        System.out.println("Array Before Soring : " + Arrays.toString(arr));
+        logger.info("Array Before Soring : " + Arrays.toString(arr));
         new QuickSort().quickSort(arr, 0, arr.length - 1);
-        System.out.println("Array After Soring : " + Arrays.toString(arr));
+        logger.info("Array After Soring : " + Arrays.toString(arr));
     }
 
-    public void quickSort(Comparable[] arr, int leftIdx, int rightIdx) {
+    public void quickSort(Comparable [] arr, int leftIdx, int rightIdx) {
         if(leftIdx < rightIdx){
             Comparable pivot = getPivot(arr, leftIdx, rightIdx);
             int i = leftIdx;
@@ -36,7 +36,7 @@ public class QuickSort {
         }
     }
 
-    private Comparable getPivot(Comparable[] arr, int leftIdx, int rightIdx) {
+    private Comparable getPivot(Comparable [] arr, int leftIdx, int rightIdx) {
         return arr[(leftIdx + rightIdx)/2];
     }
 }

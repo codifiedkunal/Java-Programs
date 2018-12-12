@@ -3,15 +3,17 @@ package com.kworld.dsalgo.soring;
 
 import com.kworld.util.Util;
 
+import static com.kworld.util.Util.logger;
+
 import java.util.Arrays;
 
 public class BubbleSort {
     public static void main(String[] args) {
         Integer [] arr = {6, 1, 8, 6, 0, 3, 2, 8, 6, 7, 66, 12, -1};
 
-        System.out.println("Array Before Soring : " + Arrays.toString(arr));
+        logger.info(String.format("Array Before Soring %s %n", Arrays.toString(arr)));
         new BubbleSort().sortArray(arr);
-        System.out.println("Array After Soring : " + Arrays.toString(arr));
+        logger.info(String.format("Array After Soring %s %n", Arrays.toString(arr)));
     }
 
     private void sortArray(Integer [] arr) {
@@ -20,7 +22,7 @@ public class BubbleSort {
                 if (arr[j - 1] > arr[j])
                     Util.swapValues(arr, j - 1, j);
             }
-            System.out.printf("After Loop %2d %s \n", i, Arrays.toString(arr));
+            logger.info(String.format("After Loop %2d %s %", i, Arrays.toString(arr)));
         }
     }
 }

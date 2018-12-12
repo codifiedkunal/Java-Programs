@@ -1,5 +1,7 @@
 package com.kworld.problems.arrays;
 
+import static com.kworld.util.Util.logger;
+
 public class RemoveDuplicate0to10 {
     public static void main(String[] args) {
         int [] arr = {0 ,3, 4, 5, 3, 0, 9, 3, 1, 10, 4};
@@ -23,7 +25,7 @@ public class RemoveDuplicate0to10 {
         }
 
         for (int i = 0, j = 0;i< newArr.length; i++){
-            System.out.print(newArr[i] + " ");
+        	logger.info(newArr[i] + " ");
         }
     }
 }

@@ -1,13 +1,15 @@
 package com.kworld.problems.arrays;
 
+import static com.kworld.util.Util.logger;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class LongestIncreasingSubSequence {
     public static void main(String[] args) {
         int arr [] = {7, 1, 3, 2, 5, 4, 6};
-        System.out.printf("Length of Longest Increasing SubSequence using recursive approach is %d", new LongestIncreasingSubSequence().usingRecursive(arr, 0, arr.length, Integer.MIN_VALUE));
-        System.out.printf("\nLength of Longest Increasing SubSequence using DP approach is %d", new LongestIncreasingSubSequence().usingDP(arr));
+        logger.info(String.format("Length of Longest Increasing SubSequence using recursive approach is %d", new LongestIncreasingSubSequence().usingRecursive(arr, 0, arr.length, Integer.MIN_VALUE)));
+        logger.info(String.format("%nLength of Longest Increasing SubSequence using DP approach is %d", new LongestIncreasingSubSequence().usingDP(arr)));
     }
 
     private int usingRecursive(int[] arr, int i, int length, int previous) {
@@ -40,7 +42,7 @@ public class LongestIncreasingSubSequence {
                 max = lis[i];
         }
 
-        System.out.print("\nLongest incresing sub seqence is " + max);
+        logger.info("\nLongest incresing sub seqence is " + max);
         return max.size();
     }
 }

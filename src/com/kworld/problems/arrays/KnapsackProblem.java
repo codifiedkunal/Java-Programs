@@ -1,11 +1,13 @@
 package com.kworld.problems.arrays;
 
+import static com.kworld.util.Util.logger;
+
 // 0/1 Knapsack
 public class KnapsackProblem {
     public static void main(String[] args) {
-//        System.out.print("Enter Capacity of Knapsack :");
+    	//logger.info("Enter Capacity of Knapsack :");
         int capacity = 4;//Util.scanner.nextInt();
-//        System.out.print("Enter No of Items :");
+        //System.out.print("Enter No of Items :");
         int noOfItems = 5;//Util.scanner.nextInt();
 
         int weight[] = {1,2,3,2,2};//new int[noOfItems];
@@ -16,13 +18,13 @@ public class KnapsackProblem {
             System.out.print(String.format("Enter %dth Items Value :", (i+1)));
             value[i] = Util.scanner.nextInt();
         }
-        System.out.println("Items are :");
+        logger.info(("\nItems are :");
         for (int i = 0; i < noOfItems; i++) {
             System.out.println("(" + weight[i] + " , " + value[i] + " )");
         }*/
 
-        System.out.printf("Knapsack Value %d ", solveKnapsackRecursive(weight, value, noOfItems, capacity));
-        System.out.printf("\nKnapsack Value using DP %d ", solveKnapsackDP(weight, value, noOfItems, capacity));
+        logger.info(String.format("Knapsack Value %d ", solveKnapsackRecursive(weight, value, noOfItems, capacity)));
+        logger.info(String.format("%nKnapsack Value using DP %d ", solveKnapsackDP(weight, value, noOfItems, capacity)));
     }
 
     private static int solveKnapsackDP(int[] weight, int[] value, int noOfItems, int capacity) {
@@ -48,11 +50,11 @@ public class KnapsackProblem {
         for (int i = 0; i < memorize.length; i++) {
             int [] arr = memorize[i];
             for (int j = 0; j < arr.length; j++) {
-                System.out.print(memorize[i][j] + ",");
+            	logger.info(memorize[i][j] + ",");
             }
-            System.out.println();
+            logger.info("\n");
         }
-        System.out.println("----------");
+        logger.info("----------");
     }
 
     private static int solveKnapsackRecursive(int[] weight, int[] value, int noOfItems, int capacity) {

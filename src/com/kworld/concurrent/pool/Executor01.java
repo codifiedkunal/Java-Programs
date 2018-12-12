@@ -1,18 +1,19 @@
 package com.kworld.concurrent.pool;
 
-import java.util.concurrent.Executor;
+import static com.kworld.util.Util.logger;
+
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Executor01 {
     public static void main(String[] args) {
-        Executor executor = Executors.newSingleThreadExecutor();
-        executor.execute(()->{
-            System.out.println(Thread.currentThread().getId());
-        });
-
-        executor.execute(()->{
-            System.out.println(Thread.currentThread().getId());
-        });
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        try {
+			executor.execute(() -> logger.info(Thread.currentThread().getId() + ""));
+			executor.execute(() -> logger.info(Thread.currentThread().getId() + ""));
+		} finally {
+			executor.shutdown();
+		}
 
     }
 }

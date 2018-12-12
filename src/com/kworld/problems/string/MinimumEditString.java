@@ -1,6 +1,6 @@
 package com.kworld.problems.string;
 
-import com.kworld.util.Util;
+import static com.kworld.util.Util.logger;
 
 /**
  * Find Minimum Edit to String to match with 2nd String
@@ -10,14 +10,13 @@ import com.kworld.util.Util;
  */
 public class MinimumEditString {
     public static void main(String[] args) {
-        //System.out.printf("Enter 1st String : ");
+        //logger.info("Enter 1st String : ");
         String str1 = "Kunal";//Util.scanner.next();
         //System.out.printf("Enter 2nd String : ");
         String str2 = "Kunir";//Util.scanner.next();
 
-        System.out.printf("\nDistance using recursion/brute force : %d", new MinimumEditString().distanceRecusive(str1, str2, str1.length(), str2.length()));
-
-        System.out.printf("\nDistance using DP : %d", new MinimumEditString().distanceDP(str1, str2, str1.length(), str2.length()));
+        logger.info(String.format("%nDistance using recursion/brute force : %d", new MinimumEditString().distanceRecusive(str1, str2, str1.length(), str2.length())));
+        logger.info(String.format("%nDistance using DP : %d", new MinimumEditString().distanceDP(str1, str2, str1.length(), str2.length())));
     }
 
     private int distanceRecusive(String str1, String str2, int len1, int len2) {

@@ -1,5 +1,7 @@
 package com.kworld.dsalgo.soring;
 
+import static com.kworld.util.Util.logger;
+
 import java.util.Arrays;
 
 //To Sort Positive Numbers of distinct Values
@@ -7,7 +9,7 @@ import java.util.Arrays;
 public class BucketSort {
     public static void main(String[] args) {
         Integer [] arr = {61, 1, 8, 68, 0, 3, 2, 81, 60, 7, 66, 12, 11};
-        System.out.printf("Unsorted Values %s \n", Arrays.toString(arr));
+        logger.info(String.format("Unsorted Values %s %n", Arrays.toString(arr)));
         int max = -1;
         for (int i = 0; i < arr.length; i++) {
             if(arr[i] > max) {
@@ -25,6 +27,7 @@ public class BucketSort {
             }
         }
         sortedArray = null;
-        System.out.printf("After Sort %s\n", Arrays.toString(arr));
+        
+        logger.info(String.format("After Sort %s %n", Arrays.toString(arr)));
     }
 }
